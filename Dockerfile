@@ -26,3 +26,12 @@ ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64:${LD_LIBRARY_P
 CMD ["/bin/bash"]
 
 
+
+
+
+
+RUN apt-get update
+RUN apt-get install -y cmake git build-essential
+RUN apt-get install -y libeigen3-dev libsuitesparse-dev qtdeclarative5-dev qt5-qmake libqglviewer-dev
+RUN mkdir /code && cd /code && git clone https://github.com/RainerKuemmerle/g2o.git && cd ./g2o && mkdir build && cd build && cmake ../ && make -j4 && make install -j4
+RUN ldconfig

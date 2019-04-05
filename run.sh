@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-
+GIVEN_IMAGE_NAME=g2oviewer
 # Check args
-if [ "$#" -ne 1 ]; then
-  echo "usage: ./run.sh GIVEN_IMAGE_NAME"
-  return 1
-fi
+#if [ "$#" -ne 1 ]; then
+#  echo "usage: ./run.sh GIVEN_IMAGE_NAME"
+#  return 1
+#fi
 
 set -e
 
@@ -17,9 +17,10 @@ docker run --rm \
   --net=host \
   --ipc=host \
   --privileged \
+  -v $HOME/docker_share:/home \
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
   -v $HOME/.Xauthority:/root/.Xauthority -e XAUTHORITY=/root/.Xauthority \
   -v ${NVIDIA_DRIVER}:/usr/local/nvidia/lib \
   -v ${NVIDIA_DRIVER}:/usr/local/nvidia/lib64 \
   -e DISPLAY=$DISPLAY \
-  -it $1
+  -it $GIVEN_IMAGE_NAME
