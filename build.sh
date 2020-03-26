@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-docker build -t g2oviewer .
+docker build -t tseanliu/g2o:latest .
 # Check args
 #if [ "$#" -ne 1 ]; then
 #  echo "usage: ./build.sh GIVEN_IMAGE_NAME"

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-GIVEN_IMAGE_NAME=g2oviewer
+GIVEN_IMAGE_NAME=tseanliu/g2o:latest
 # Check args
 #if [ "$#" -ne 1 ]; then
 #  echo "usage: ./run.sh GIVEN_IMAGE_NAME"
