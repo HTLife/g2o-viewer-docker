@@ -13,7 +13,7 @@ nvidia_version=nvidia-$(cat /proc/driver/nvidia/version | head -n 1 | awk '{ pri
 NVIDIA_DRIVER="/usr/lib/$nvidia_version"
 
 # Run the container shared X11, shared network interface and mapped NVIDIA driver
-docker run --rm \
+docker run --gpus all --rm \
   --net=host \
   --ipc=host \
   --privileged \
